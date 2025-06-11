@@ -92,3 +92,4 @@ zinit light-mode for \
 
 . $HOME/.asdf/completions/asdf.zsh
 eval "$(~/.local/bin/mise activate)"
+export PATH="$HOME/.local/bin:$PATH"
