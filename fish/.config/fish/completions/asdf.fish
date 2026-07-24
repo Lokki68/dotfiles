@@ -1,0 +1,1 @@
+/home/libertb/.asdf/completions/asdf.fish
