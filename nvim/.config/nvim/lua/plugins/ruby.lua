@@ -1,16 +1,4 @@
 return {
-  -- Treesitter pour Ruby
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "ruby",
-        "erb", -- pour les vues .erb
-        "haml",
-      })
-    end,
-  },
-
   -- LSP pour Ruby (Solargraph ou Ruby LSP)
   {
     "neovim/nvim-lspconfig",

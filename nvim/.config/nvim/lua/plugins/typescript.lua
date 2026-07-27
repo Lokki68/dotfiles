@@ -1,19 +1,4 @@
 return {
-  -- Treesitter JS/TS/JSX/TSX
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "javascript",
-        "typescript",
-        "tsx",
-        "vue",
-        "json",
-        "jsdoc",
-      })
-    end,
-  },
-
   -- LSP Typescript
   {
     "neovim/nvim-lspconfig",
