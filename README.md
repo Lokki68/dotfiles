@@ -7,11 +7,11 @@
 
 ## 🖥️ Aperçu des postes
 
-| Poste | OS | Usage |
-|---|---|---|
-| **ThinkBook** | Arch Linux | Principal / pro |
-| **ThinkPad** | Ubuntu | Personnel |
-| **MacBook Pro 13" 2019** | macOS | Mobile / secours |
+| Poste                    | OS         | Usage            |
+| ------------------------ | ---------- | ---------------- |
+| **ThinkBook**            | Arch Linux | Principal / pro  |
+| **ThinkPad**             | Ohmarchy   | Personnel        |
+| **MacBook Pro 13" 2019** | macOS      | Mobile / secours |
 
 Chaque poste partage la même configuration via Git + Stow. Seuls les outils propres à chaque OS (paquets système, installeur CLI) diffèrent.
 
@@ -44,11 +44,11 @@ tmux/.tmux.conf           →  ~/.tmux.conf
 
 ## ✅ Prérequis
 
-| Outil | Rôle | Arch | Ubuntu | macOS |
-|---|---|---|---|---|
-| `git` | Versioning | `sudo pacman -S git` | `sudo apt install git` | ✅ déjà là |
+| Outil  | Rôle                 | Arch                  | Ubuntu                  | macOS               |
+| ------ | -------------------- | --------------------- | ----------------------- | ------------------- |
+| `git`  | Versioning           | `sudo pacman -S git`  | `sudo apt install git`  | ✅ déjà là          |
 | `stow` | Gestion des symlinks | `sudo pacman -S stow` | `sudo apt install stow` | `brew install stow` |
-| `curl` | Téléchargements | `sudo pacman -S curl` | `sudo apt install curl` | ✅ déjà là |
+| `curl` | Téléchargements      | `sudo pacman -S curl` | `sudo apt install curl` | ✅ déjà là          |
 
 ---
 
@@ -80,17 +80,20 @@ cd ~/dotfiles
 ### 2. Installer les dépendances système
 
 **Arch Linux :**
+
 ```bash
 sudo pacman -S git stow curl
 ```
 
 **Ubuntu :**
+
 ```bash
 sudo apt update
 sudo apt install git stow curl
 ```
 
 **macOS :**
+
 ```bash
 brew install git stow
 ```
@@ -195,24 +198,24 @@ Le contenu original (s'il a été sauvegardé) est retrouvé automatiquement par
 
 ## 🛠️ Détail des outils inclus
 
-| Outil | Rôle | Remplace |
-|---|---|---|
-| **Fish** | Shell interactif avec auto-complétion avancée | bash, zsh |
-| **oh-my-posh** | Prompt thèmeé avec icônes et infos git | prompt Fish par défaut |
-| **Neovim + lazy.nvim** | Éditeur modal Lua avec plugins (diffview, dadbod, navigator) | VS Code, Sublime |
-| **Ghostty** | Terminal rapide, native UI, theme Catppuccin-mocha | iTerm2, Terminator |
-| **Tmux + tmux-navigator** | Multiplexeur + navigation pane vim/tmux | onglets du terminal |
-| **eza** | Listing avec icônes, couleurs, git status | `ls` |
-| **bat** | Affichage de fichier avec syntax highlighting | `cat` |
-| **fd** | Recherche de fichiers rapide et coloré | `find` |
-| **ripgrep / rg** | Recherche dans le contenu (regex, glob,ignore) | `grep` |
-| **fzf** | Fuzzy finder interactif (completion Fish) | búsqueda manuelle |
-| **zoxide** | `cd` intelligent qui apprend vos habitudes | `cd` |
-| **git-delta** | Diff avec coloration syntaxique et side-by-side | `git diff` |
-| **lazygit** | TUI Git pour gestion visuelle des commits/branches | ligne de commande git |
-| **gh** | CLI GitHub (PR, issues, releases) | interface web GitHub |
-| **jq** | Requête et transformation JSON | grep + awk sur JSON |
-| **htop / ncdu** | Monitoring CPU/mémoire et usage disque | `top`, `du` |
+| Outil                     | Rôle                                                         | Remplace               |
+| ------------------------- | ------------------------------------------------------------ | ---------------------- |
+| **Fish**                  | Shell interactif avec auto-complétion avancée                | bash, zsh              |
+| **oh-my-posh**            | Prompt thèmeé avec icônes et infos git                       | prompt Fish par défaut |
+| **Neovim + lazy.nvim**    | Éditeur modal Lua avec plugins (diffview, dadbod, navigator) | VS Code, Sublime       |
+| **Ghostty**               | Terminal rapide, native UI, theme Catppuccin-mocha           | iTerm2, Terminator     |
+| **Tmux + tmux-navigator** | Multiplexeur + navigation pane vim/tmux                      | onglets du terminal    |
+| **eza**                   | Listing avec icônes, couleurs, git status                    | `ls`                   |
+| **bat**                   | Affichage de fichier avec syntax highlighting                | `cat`                  |
+| **fd**                    | Recherche de fichiers rapide et coloré                       | `find`                 |
+| **ripgrep / rg**          | Recherche dans le contenu (regex, glob,ignore)               | `grep`                 |
+| **fzf**                   | Fuzzy finder interactif (completion Fish)                    | búsqueda manuelle      |
+| **zoxide**                | `cd` intelligent qui apprend vos habitudes                   | `cd`                   |
+| **git-delta**             | Diff avec coloration syntaxique et side-by-side              | `git diff`             |
+| **lazygit**               | TUI Git pour gestion visuelle des commits/branches           | ligne de commande git  |
+| **gh**                    | CLI GitHub (PR, issues, releases)                            | interface web GitHub   |
+| **jq**                    | Requête et transformation JSON                               | grep + awk sur JSON    |
+| **htop / ncdu**           | Monitoring CPU/mémoire et usage disque                       | `top`, `du`            |
 
 ---
 
@@ -225,6 +228,7 @@ Le contenu original (s'il a été sauvegardé) est retrouvé automatiquement par
 **Cause :** Le fichier de thème (`iterm2.omp.json`) n'existe pas dans les dotfiles.
 
 **Solution :**
+
 ```bash
 # Vérifier que le thème existe dans les dotfiles
 ls ~/dotfiles/fish/.config/fish/themes/
@@ -304,6 +308,7 @@ Ou utiliser le script `install-cli-tools.sh` qui gère déjà ces cas.
 **Cause :** La ligne `set -gx PNPM_HOME "$HOME/.local/share/pnpm"` dans `config.fish` est correcta. Vérifiez que `fish_add_path $PNPM_HOME` est bien après la définition de `PNPM_HOME`.
 
 **Solution :**
+
 ```fish
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 fish_add_path $PNPM_HOME
@@ -318,6 +323,7 @@ fish_add_path $PNPM_HOME
 **Cause :** Le chemin ASDF varie selon l'installation (git clone vs gestionnaire de paquets) et le username.
 
 **Solution :** Modifier `config.fish` pour chercher les deux chemins :
+
 ```fish
 if test -f $HOME/.asdf/asdf.fish
     source $HOME/.asdf/asdf.fish
@@ -335,6 +341,7 @@ end
 **Cause :** Vous n'êtes pas dans le bon répertoire (pas `~/dotfiles`) ou le dossier `fish/` n'existe pas encore.
 
 **Solution :**
+
 ```bash
 cd ~/dotfiles
 ls fish/
@@ -345,13 +352,13 @@ stow fish
 
 ## 🌐 Compatibilité multi-OS
 
-| Étape | Arch Linux | Ubuntu | macOS |
-|---|---|---|---|
-| Git | `pacman -S git` | `apt install git` | déjà là |
-| Stow | `pacman -S stow` | `apt install stow` | `brew install stow` |
-| Outils CLI | `pacman -S <paquet>` | `apt install <paquet>` + alias | `brew install <paquet>` |
-| eza | `pacman -S eza` | Dépôt GitHub ou `cargo install eza` | `brew install eza` |
-| Ghostty | `pacman -S ghostty` | Téléchargement .deb ou build from source | `brew install ghostty` |
+| Étape      | Arch Linux             | Ubuntu                                     | macOS                     |
+| ---------- | ---------------------- | ------------------------------------------ | ------------------------- |
+| Git        | `pacman -S git`        | `apt install git`                          | déjà là                   |
+| Stow       | `pacman -S stow`       | `apt install stow`                         | `brew install stow`       |
+| Outils CLI | `pacman -S <paquet>`   | `apt install <paquet>` + alias             | `brew install <paquet>`   |
+| eza        | `pacman -S eza`        | Dépôt GitHub ou `cargo install eza`        | `brew install eza`        |
+| Ghostty    | `pacman -S ghostty`    | Téléchargement .deb ou build from source   | `brew install ghostty`    |
 | Oh-my-posh | `pacman -S oh-my-posh` | `curl -s https://ohmyposh.tech/install.sh` | `brew install oh-my-posh` |
 
 Le script `scripts/install-cli-tools.sh` détecte automatiquement l'OS et adapte les commandes.
