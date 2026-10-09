@@ -35,12 +35,10 @@ set -gx EDITOR nvim
 set -gx RUBY_BUILD_ROOT "$HOME/.ruby-build"
 
 # ─────────────────────────────────────────
-# ASDF
+# MISE
 # ─────────────────────────────────────────
-if test -f $HOME/.asdf/asdf.fish
-    source $HOME/.asdf/asdf.fish
-else if test -f /opt/asdf-vm/asdf.fish
-    source /opt/asdf-vm/asdf.fish
+if type -q mise
+    mise activate fish | source
 end
 
 # ─────────────────────────────────────────
