@@ -53,6 +53,7 @@ install_arch() {
   log_info "Installation des paquets via pacman..."
   sudo pacman -S --needed --noconfirm \
     fish \
+    mise \
     git \
     neovim \
     tmux \
@@ -104,6 +105,7 @@ install_debian() {
     fish \
     git \
     neovim \
+    mise \
     tmux \
     stow \
     bat \
@@ -201,6 +203,7 @@ install_macos() {
   brew install \
     fish \
     git \
+    mise \
     neovim \
     tmux \
     stow \
@@ -263,7 +266,7 @@ log_info "Installation terminée !"
 log_info "─────────────────────────────────────────"
 echo ""
 log_info "Outils installés :"
-for cmd in fish nvim tmux stow bat fd fzf zoxide delta lazygit rg fastfetch oh-my-posh; do
+for cmd in fish nvim mise tmux stow bat fd fzf zoxide delta lazygit rg fastfetch oh-my-posh; do
   if command -v "$cmd" >/dev/null 2>&1; then
     echo -e "  ${GREEN}✓${NC} $cmd"
   else

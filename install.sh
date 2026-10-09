@@ -11,7 +11,7 @@ command -v stow >/dev/null 2>&1 || {
 
 cd "$(dirname "$0")"
 
-for pkg in nvim tmux fish ghostty; do
+for pkg in nvim tmux fish ghostty mise; do
   echo "→ Stow $pkg"
   stow -v "$pkg"
 done
