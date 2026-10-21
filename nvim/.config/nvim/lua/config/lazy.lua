@@ -20,6 +20,8 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
+    -- En mode VSCode : ne garder que les plugins d'édition (voir plugins/vscode.lua)
+    { import = "plugins.vscode" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -32,7 +34,7 @@ require("lazy").setup({
   },
   install = { colorscheme = { "kanagawa" } },
   checker = {
-    enabled = true, -- check for plugin updates periodically
+    enabled = not vim.g.vscode, -- check for plugin updates periodically
     notify = false, -- notify on update
   }, -- automatically check for plugin updates
   performance = {
