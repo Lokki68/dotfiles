@@ -20,7 +20,7 @@ return {
   -- Mason pour installer les outils Ruby
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "rubocop" } },
+    opts = { ensure_installed = { "rubocop", "erb-formatter" } },
   },
 
   -- Formatter/Linter Ruby avec conform.nvim et nvim-lint

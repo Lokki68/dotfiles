@@ -15,8 +15,7 @@ return {
 
         -- Ruby / Rails
         "ruby",
-        "erb",
-        "haml",
+        "embedded_template",
 
         -- Général
         "yaml",
